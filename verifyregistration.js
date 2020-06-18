@@ -7,7 +7,7 @@ function verifyReg(){
       alert("recaptcha unverified");
     }
     var validTagRegEx = /.*[^# ]ID[0-9]{4}/;
-    var validation = validTagRegEx.test(convertedTag);
+    var validation = validTagRegEx.test(validUserTag);
     if (captchaSuccess == true && validation == true) {
       alert("nice job buddy");
     }
