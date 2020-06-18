@@ -26,6 +26,9 @@
       if (captchaSuccess == true && validation == true) {
         alert("nice job buddy");
         console.log("yep");
+        document.cookie = "tag=" + validUserTag;
+        var cookki  = document.cookie;
+        console.log(cookki);
       } else {
           alert("you done fucked up");
           console.log("nope");
