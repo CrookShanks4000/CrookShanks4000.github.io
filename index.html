@@ -23,14 +23,16 @@
       var validTagRegEx = /.*[^# ]ID[0-9]{4}/;
       var validation = validTagRegEx.test(validUserTag);
       console.log(validation);
+      if (navigator.cookieEnabled == false) {
+        alert("Enable cookies and try again!");
+        validation = false;
+      }
       if (captchaSuccess == true && validation == true) {
-        alert("nice job buddy");
         console.log("yep");
         document.cookie = "tag=" + validUserTag;
-        var cookki  = document.cookie;
-        console.log(cookki);
+        window.location.assign("registration2.html");
       } else {
-          alert("you done fucked up");
+          alert("Try again!");
           console.log("nope");
       }
   }

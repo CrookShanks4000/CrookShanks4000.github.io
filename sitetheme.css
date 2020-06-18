@@ -4,6 +4,9 @@
 head {
 background-color: lightblue; color:darkslategrey; font-family: 'robotoCondensed', sans-serif;
 }
+h1 {
+  background-color: lightblue; color:darkslategrey; font-family: 'robotoCondensed', sans-serif;
+  }
 body {
 background-color: lightcyan; color: darkslategray; font-family: 'robotoCondensed', sans-serif;
 }
