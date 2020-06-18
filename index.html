@@ -7,14 +7,18 @@
     function verifyReg(){
       var captchaResponse = grecaptcha.getResponse();
       var captchaSuccess = captchaResponse.success;
+      console.log(captchaSuccess);
       var userTag = document.getElementById("tag").value;
+      console.log(userTag);
       var validUserTag = userTag.replace("#", "ID");
+      console.log(validUserTag);
       if (captchaSuccess == false) {
         alert("recaptcha unverified");
         console.log("no cap");
       }
       var validTagRegEx = /.*[^# ]ID[0-9]{4}/;
       var validation = validTagRegEx.test(validUserTag);
+      console.log(validation);
       if (captchaSuccess == true && validation == true) {
         alert("nice job buddy");
         console.log("yep");
