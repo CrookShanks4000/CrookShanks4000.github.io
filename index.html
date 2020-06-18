@@ -5,7 +5,7 @@
     <h1>Registration</h1>
     <script>
     function verifyReg(){
-      var captchaResponse = grecaptcha.getResponse();
+      var captchaResponse = g-recaptcha.getResponse();
       var captchaSuccess = captchaResponse.success;
       console.log(captchaSuccess);
       var userTag = document.getElementById("tag").value;
