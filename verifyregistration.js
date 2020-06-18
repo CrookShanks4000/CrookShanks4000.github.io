@@ -10,5 +10,7 @@ function verifyReg(){
     var validation = validTagRegEx.test(validUserTag);
     if (captchaSuccess == true && validation == true) {
       alert("nice job buddy");
+    } else {
+        alert("you done fucked up");
     }
 }
