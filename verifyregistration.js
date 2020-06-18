@@ -6,12 +6,9 @@ function verifyReg(){
     if (captchaSuccess == false) {
       alert("recaptcha unverified");
     }
-    function validateTag(convertedTag) {
-        const validTagRegEx = /.*[^# ]ID[0-9]{4}/;
-        return validTagRegEx.test(convertedTag);
-    }
-  }
-    var validation = validateTag(validUserTag);
+    var validTagRegEx = /.*[^# ]ID[0-9]{4}/;
+    var validation = validTagRegEx.test(convertedTag);
     if (captchaSuccess == true && validation == true) {
       alert("nice job buddy");
     }
+}
