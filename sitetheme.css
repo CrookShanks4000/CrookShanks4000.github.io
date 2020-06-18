@@ -1,8 +1,11 @@
+@font-face {
+  font-family: robotoCondensed; src: url(RobotoCondensed-Regular.ttf);
+}
 head {
-background-color: lightblue; color:darkslategrey;
+background-color: lightblue; color:darkslategrey; font-family: 'robotoCondensed', sans-serif;
 }
 body {
-background-color: lightcyan; color: darkslategray;
+background-color: lightcyan; color: darkslategray; font-family: 'robotoCondensed', sans-serif;
 }
 
 
