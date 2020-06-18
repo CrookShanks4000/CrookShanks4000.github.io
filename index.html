@@ -20,10 +20,6 @@
       console.log(userTag);
       var validUserTag = userTag.replace("#", "ID");
       console.log(validUserTag);
-      if (captchaSuccess == false) {
-        alert("recaptcha unverified");
-        console.log("no cap");
-      }
       var validTagRegEx = /.*[^# ]ID[0-9]{4}/;
       var validation = validTagRegEx.test(validUserTag);
       console.log(validation);
