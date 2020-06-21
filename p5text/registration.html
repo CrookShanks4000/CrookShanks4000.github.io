@@ -4,9 +4,14 @@
     <title>SMText Registration</title>
     <h1>Registration</h1>
     <script>
-      function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
+      function jsonUserSave (userNameInput, passwordInput, tagInput) {
+        var userObj = {username:userNameInput, password:passwordInput, tag:tagInput};
+        var xhttp1 = new XMLHttpRequest();
+        xhttp1.open("POST", "userdata/userregistry.json", true);
+        xhttp1.send();
+        var userObjFetch = JSON.parse(xhttp1.responseText);
+
+      }
     function verifyReg(){
       var captchaResponse = grecaptcha.getResponse();
       var captchaSuccess;
@@ -19,9 +24,21 @@
         console.log("captcha verified");
       }
       console.log(captchaSuccess);
-      var userTag = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      console.log(password);
+      var userName = document.getElementById("username").value;
+      console.log(userName);
+      var userTag = document.getElementById("tag").value;
       console.log(userTag);
-  
+      var validUserTag = userTag.replace("#", "ID");
+      console.log(validUserTag);
+      var validTagRegEx = /.*[^# ]ID[0-9]{4}/;
+      var validTagQuery = validTagRegEx.test(validUserTag);
+      if (validTagQuery == true && userName != "" && password != "") {
+        var validation = true;
+      }
+      console.log(validation);
+      var userObject
       if (navigator.cookieEnabled == false) {
         alert("Enable cookies and try again!");
         validation = false;
@@ -41,8 +58,13 @@
   <body>
     
     <form>
-        <label for="tag">Username:</label>
-        <input type="text" id="username" name="username"><br><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="use
+        rname"><br>
+        <label for="password">Password (use something random, this shit's super insecure):</label>
+        <input type="password" id="password" name="password"><br>
+        <label for="tag">Discord Tag (abcd#1234): </label>
+        <input type="text" id="tag" name="tag"><br><br>
         <div class="g-recaptcha" data-sitekey="6LdhHKUZAAAAAKi1Qc3eyqqHvyJle65ZSeQqhjDG"></div>
         <button type="button" onclick="verifyReg()">Submit</button>
     </form>
