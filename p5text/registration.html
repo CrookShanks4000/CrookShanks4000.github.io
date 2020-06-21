@@ -1,9 +1,12 @@
 <html>
   <head>
     <link rel="stylesheet" href="sitetheme.css">
-    <title>PokeBot Registration</title>
+    <title>SMText Registration</title>
     <h1>Registration</h1>
     <script>
+      function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
     function verifyReg(){
       var captchaResponse = grecaptcha.getResponse();
       var captchaSuccess;
@@ -16,13 +19,9 @@
         console.log("captcha verified");
       }
       console.log(captchaSuccess);
-      var userTag = document.getElementById("tag").value;
+      var userTag = document.getElementById("username").value;
       console.log(userTag);
-      var validUserTag = userTag.replace("#", "ID");
-      console.log(validUserTag);
-      var validTagRegEx = /.*[^# ]ID[0-9]{4}/;
-      var validation = validTagRegEx.test(validUserTag);
-      console.log(validation);
+  
       if (navigator.cookieEnabled == false) {
         alert("Enable cookies and try again!");
         validation = false;
@@ -32,7 +31,7 @@
         document.cookie = "tag=" + validUserTag;
         window.location.assign("registration2.html");
       } else {
-          alert("Try again!");
+          alert("Something went wrong! Try again!");
           console.log("nope");
       }
   }
@@ -40,10 +39,10 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
-    <div>test text</div>
+    
     <form>
-        <label for="tag">Discord tag i.e. PokeBot#6789:  </label>
-        <input type="text" id="tag" name="tag"><br><br>
+        <label for="tag">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
         <div class="g-recaptcha" data-sitekey="6LdhHKUZAAAAAKi1Qc3eyqqHvyJle65ZSeQqhjDG"></div>
         <button type="button" onclick="verifyReg()">Submit</button>
     </form>
