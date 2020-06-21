@@ -5,12 +5,17 @@
     <h1>Registration</h1>
     <script>
       function jsonUserSave (userNameInput, passwordInput, tagInput) {
-        var userObj = {username:userNameInput, password:passwordInput, tag:tagInput};
+        var userArray = [userNameInput, passwordInput, tagInput];
         var xhttp1 = new XMLHttpRequest();
-        xhttp1.open("POST", "userdata/userregistry.json", true);
+        xhttp1.open("GET", "userdata/userregistry.json?t=" + Math.random(), true);
         xhttp1.send();
         var userObjFetch = JSON.parse(xhttp1.responseText);
-
+        userObjFetch.push(userArray);
+        JSON.stringify(userObjFetch);
+        var xhttp2 = new XMLHttpRequest();
+        xhttp2.open("POST", "registrationbackend.php", true);
+        xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp2.send("reg=" + userObjFetch);
       }
     function verifyReg(){
       var captchaResponse = grecaptcha.getResponse();
@@ -45,7 +50,7 @@
       }
       if (captchaSuccess == true && validation == true) {
         console.log("yep");
-        document.cookie = "tag=" + validUserTag;
+        jsonUserSave(userName, password, validUserTag);
         window.location.assign("registration2.html");
       } else {
           alert("Something went wrong! Try again!");
