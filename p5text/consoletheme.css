@@ -5,10 +5,10 @@
   background-color: black; color:white; font-family: 'Roboto Mono', monospace;
   }
   h1 {
-    background-color: black; text-align: right; color:white; font-family: 'Roboto Mono', monospace; display: inline-block;
+    background-color: black; text-align: right; color:white; font-family: 'Roboto Mono', monospace; display: block;
   }
   img {
-    display: inline-block; 
+    display: block; 
     right: 0px;
 
   }
