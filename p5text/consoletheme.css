@@ -1,0 +1,15 @@
+@font-face {
+    font-family: robotoCondensed; src: url(RobotoCondensed-Regular.ttf);
+  }
+  head {
+  background-color: black; color:white; font-family: 'Roboto Mono', monospace;
+  }
+  h1 {
+    background-color: black; color:white; font-family: 'Roboto Mono', monospace;
+  }
+  body {
+    background-color: black; color:white; font-family: 'Roboto Mono', monospace;
+  }
+  
+  
+  
