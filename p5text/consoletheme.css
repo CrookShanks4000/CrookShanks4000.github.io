@@ -5,12 +5,12 @@
   background-color: black; color:white; font-family: 'Roboto Mono', monospace;
   }
   h1 {
-    background-color: black; text-align: right; color:white; font-family: 'Roboto Mono', monospace; position: fixed; right:200px; top: 20px;
+    background-color: black; text-align: right; color:white; font-family: 'Roboto Mono', monospace; position: fixed; right:200px; top: 0px;
   }
   img {
       position: fixed;
     right: 0px;
-    top: 20px;
+    top: 0px;
 
   }
   body {
