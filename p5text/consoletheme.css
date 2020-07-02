@@ -8,8 +8,10 @@
     background-color: black; text-align: right; color:white; font-family: 'Roboto Mono', monospace; display: block;
   }
   img {
+      position: absolute;
     display: block; 
     right: 0px;
+    top: 0px;
 
   }
   body {
