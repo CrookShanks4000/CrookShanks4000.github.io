@@ -5,7 +5,8 @@
   background-color: black; color:white; font-family: 'Roboto Mono', monospace;
   }
   h1 {
-    background-color: black; text-align: right; color:white; font-family: 'Roboto Mono', monospace; position: fixed; right:200px; top: 0px;
+    background-color: black; text-align: right; color:white; font-family: 'Roboto Mono', monospace; position: fixed; right:200px; top: 0px; padding: 0px; border: 0px;
+    margin: 0;
   }
   img {
       position: fixed;
