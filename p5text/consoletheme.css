@@ -15,7 +15,7 @@
 
   }
   body {
-    background-color: black; color:white; font-family: 'Roboto Mono', monospace; vertical-align: bottom;
+    background-color: black; color:white; font-family: 'Roboto Mono', monospace; position: fixed; bottom: 0
   }
   
   
